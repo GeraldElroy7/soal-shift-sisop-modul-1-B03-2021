@@ -1,0 +1,5 @@
+
+
+0 7 * * 1-5 bash ~/soal-shift-sisop-modul-1-B03-2021/soal3/soal3d.sh
+
+1 18 * * 1-5 /usr/bin/unzip -P `date +"%d%m%Y"` ~/soal-shift-sisop-modul-1-B03-2021/soal3/Koleksi.zip -d ~/soal-shift-sisop-modul-1-B03-2021/soal3 && rm ~/soal-shift-sisop-modul-1-B03-2021/soal3/Koleksi.zip
