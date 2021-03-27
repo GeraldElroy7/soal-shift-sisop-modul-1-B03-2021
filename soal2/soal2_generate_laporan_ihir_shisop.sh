@@ -18,21 +18,21 @@ BEGIN {
   }
 }
 END{
-  printf("Transaksi terakhir dengan profit percentage terbesar yaitu %d dengan persentase %.2f%%\n",id,max)
+  printf("Transaksi terakhir dengan profit percentage terbesar yaitu %d dengan persentase %.2f%%\n\n",id,max)
 }
 ' Laporan-TokoShiSop.tsv >> hasil.txt
 
 #nomor 2B
 awk '
 BEGIN{
-  OFS='\t'
+  FS='\t'
 }
 {
-  if($2 -eq "-2017-" && $10 -eq "Albuquerque")
-  a[$7]++
+  if($2~"-2017-" && $10~"Albuquerque")
+  a[$7]
 }
 END {
-  echo -e "Daftar nama customer di Albuquerque pada tahun 2017 antara lain:"
+  printf("Daftar nama customer di Albuquerque pada tahun 2017 antara lain:\n")
 
   for (costumer in a)
   {
