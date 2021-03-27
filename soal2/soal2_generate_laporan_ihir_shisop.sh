@@ -31,12 +31,12 @@ BEGIN{
   if($2 -eq "-2017-" && $10 -eq "Albuquerque")
   a[$7]++
 }
-END{
+END {
   echo -e "Daftar nama customer di Albuquerque pada tahun 2017 antara lain:"
 
   for (costumer in a)
   {
- 	print customer
+ 	  printf("%s\n",costumer)
   }
 }
 ' Laporan-TokoShiSop.tsv >> hasil.txt
