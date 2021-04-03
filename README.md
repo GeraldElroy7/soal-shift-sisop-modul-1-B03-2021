@@ -16,6 +16,9 @@ Karena `(ERROR/INFO)` dimulai dengan huruf kapital E dan I, maka cukup cari kali
 
 Kami juga menambahkan `.*` pada *syntax*, agar karakter setelah huruf yang difilter juga ikut di-*print* hingga karakter terakhir pada line tersebut. Setelah itu, akhiri dengan file yang dituju, yaitu `syslog.log`
 
+#### Output
+![Output 1A](/images/hasil1a.png)
+
 ### Cara Pengerjaan 1B
 
 ![Source Code 1B](/images/1b.png)
@@ -31,6 +34,9 @@ cut -d "(" -f1
 Arti dari *command* ini ialah mengambil semua karakter sebelum tanda "(", karena adanya *delimiter* (`-d`). Ketika *command* `cut` dilakukan, maka *field* sebelum *delimiter* akan dianggap `field 1`, maka dari itu ditambahkan `-f1` pada syntaxnya, agar hanya mengambil semua karakter sebelum "(".
 
 Setelah itu, lakukan `sort` agar bisa melakukan `uniq`. `uniq` akan mengelompokkan karakter sesuai jenis **Error**-nya, sistemnya seperti `GROUP BY` pada SQL. Terakhir, tambahkan `-c` setelah `uniq` agar bisa dihitung/di-*count* berdasarkan jumlah kemunculannya pada file tersebut.
+
+#### Output
+![Output 1B](/images/hasil1b.png)
 
 ### Cara Pengerjaan 1C
 
@@ -67,6 +73,9 @@ done
 Setiap kali berhasil ditemukan karakter `ERROR`, maka dihitung jumlah kemunculannya dengan `wc -l` dan dimasukkan ke variabel `e`. Jadi, nilai dari `e` adalah total kemunculan untuk tiap jenis `ERROR`. Begitu juga dengan `INFO` yang diinisiasikan pada variabel `i`.<br/>
 
 Setelah `while` selesai dilakukan, maka *print* setiap username (`uniq`) beserta jumlah kemunculan INFO & ERROR-nya.
+
+#### Output
+![Output 1C](/images/hasil1c.png)
 
 ### Cara Pengerjaan 1D
 
@@ -109,6 +118,9 @@ Agar dapat diurutkan, pisahkan kalimat `printf` tadi dengan *delimiter* ",". Jad
 
 Setelah semua *syntax* dilakukan, keluarkan outputnya ke file `error_message.csv`.
 
+#### Output
+![Output 1D](/images/hasil1d.png)
+
 ### Cara Pengerjaan 1E
 
 ![Source Code 1E](/images/1e.png)
@@ -124,6 +136,9 @@ echo "Username,Info,Error" > user_statistic.csv
 Artinya, karakter yang ada di dalam `echo` tersebut di-*print* di awal file `user_statistic.csv`.
 
 Cara mencari karakter yang dicari juga sama persis dengan **1C**, cukup tambahkan `>> user_statistic.csv` pada akhir *syntax* agar output dapat muncul di file `user_statistic.csv`.
+
+#### Output
+![Output 1E](/images/hasil1e.png)
 
 ### Kendala Selama Pengerjaan
 
