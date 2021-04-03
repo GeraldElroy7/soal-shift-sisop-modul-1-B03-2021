@@ -72,4 +72,60 @@ Setelah `while` selesai dilakukan, maka *print* setiap username (`uniq`) beserta
 
 ![Source Code 1D](/images/1d.png)
 
+Pada soal **1D**, *user* diminta untuk membuat daftar pesan error dan jumlah kemunculannya **diurutkan** berdasarkan jumlah kemunculan pesan error dari yang terbanyak.
+
+Pesan **error** dapat dikelompokkan berdasarkan jenisnya. Ini adalah contoh kata yang mewakilkan setiap pesan **error** yang ada, seperti:
+
+ - modified
+ - permission
+ - tried
+ - timeout
+ - exist
+ - connection
+
+Agar mudah untuk diiterasi, maka tiap *keyword* ini diinisiasikan sebagai sebuah variabel. Variabelnya ini nanti berisikan berapa kali jumlah kemunculan untuk tiap jenis pesan **error**. Contohnya sebagai berikut:
+
+```bash
+modified=$(grep "modified" syslog.log | wc -l)
+```
+
+Artinya, isi dari variabel `modified` adalah jumlah kemunculan kata *modified* pada `syslog.log` untuk tiap barisnya. Gunakan `grep` agar bisa mengambil karakter yang diinginkan, lalu tambahkan `wc -l` agar dihitung juga jumlah kemunculannya. Ini juga berlaku untuk pesan *error* lainnya.
+
+Tambahkan juga *header* sebagai awalan dari file `error_message.csv` dengan syntax:
+
+```bash
+echo "Error,Count" > error_message.csv
+```
+
+Setelah semua variabel sudah mempunyai nilai, langkah terakhir adalah *print* semua jenis **error** beserta jumlah kemunculannya. Variabel tadi dipanggil dengan prefix `$`, contohnya adalah `$modified`.
+
+Soal meminta untuk mengurutkan dari jumlah kemunculan pesan error yang terbanyak. Maka, lakukan syntax ini: 
+
+```bash
+sort -t"," -k2 -nr  >> error_message.csv
+```
+
+Agar dapat diurutkan, pisahkan kalimat `printf` tadi dengan *delimiter* ",". Jadi, karakter sebelum koma (pesan **error**) akan dianggap kolom pertama, dan setelah koma (jumlah kemunculan) akan dianggap sebagai kolom kedua. Lakukan *sorting* pada kolom kedua secara *descending* dengan *command* `-nr`, yang berarti *number reverse*.
+
+Setelah semua *syntax* dilakukan, keluarkan outputnya ke file `error_message.csv`.
+
+## Cara Pengerjaan 1E
+
+![Source Code 1E](/images/1e.png)
+
+Soal 1E dapat dikatakan sebagai lanjutan dari soal **1C**. Setelah semua informasi dari 1C didapat, maka buat outputnya ke dalam file `user_statistis.csv` dengan header **Username,INFO,ERROR** dan diurutkan berdasarkan *username* secara **ascending**.
+
+Pertama kali, buat *header* yang diminta dengan *syntax* berikut : 
+
+```bash
+echo "Username,Info,Error" > user_statistic.csv
+```
+
+Artinya, karakter yang ada di dalam `echo` tersebut di-*print* di awal file `user_statistic.csv`.
+
+Cara mencari karakter yang dicari juga sama persis dengan **1C**, cukup tambahkan `>> user_statistic.csv` pada akhir *syntax* agar output dapat muncul di file `user_statistic.csv`.
+
+
+
+
 
