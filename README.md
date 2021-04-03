@@ -131,6 +131,7 @@ Cara mencari karakter yang dicari juga sama persis dengan **1C**, cukup tambahka
 2. Pada awalnya, cukup bingung untuk mengambil karakter pada tiap line karena tidak boleh menggunakan `awk`. Namun, akhirnya dari berbagai referensi, bisa menggunakan *command* `grep`.
 3. Pada soal 1D, awalnya tidak tahu caranya untuk bisa *sorting* dalam bentuk kalimat karena belum ada pembatasnya. Akhirnya, baru tau adanya *delimiter* agar bisa memisahkan kalimat dengan pembatas yang diinginkan.
 
+## Soal 2
 
 ### Cara Pengerjaan 2A
 
