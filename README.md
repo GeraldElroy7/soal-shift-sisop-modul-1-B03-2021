@@ -4,7 +4,7 @@
 
 Pada soal 1, *user* diminta untuk membantu Ryujin untuk membuat laporan harian untuk aplikasi perusahaannya, *ticky*. Ada 2 laporan yang perlu dibuat, yaitu laporan **daftar peringkat pesan error** terbanyak yang dibuat oleh *ticky* dan **laporan penggunaan user** pada *ticky*. Soal ini tidak boleh dikerjakan menggunakan `AWK`.
 
-## Cara Pengerjaan 1A
+### Cara Pengerjaan 1A
 
 ![Source Code 1A](/images/1a.png)
 
@@ -16,7 +16,7 @@ Karena `(ERROR/INFO)` dimulai dengan huruf kapital E dan I, maka cukup cari kali
 
 Kami juga menambahkan `.*` pada *syntax*, agar karakter setelah huruf yang difilter juga ikut di-*print* hingga karakter terakhir pada line tersebut. Setelah itu, akhiri dengan file yang dituju, yaitu `syslog.log`
 
-## Cara Pengerjaan 1B
+### Cara Pengerjaan 1B
 
 ![Source Code 1B](/images/1b.png)
 
@@ -32,7 +32,7 @@ Arti dari *command* ini ialah mengambil semua karakter sebelum tanda "(", karena
 
 Setelah itu, lakukan `sort` agar bisa melakukan `uniq`. `uniq` akan mengelompokkan karakter sesuai jenis **Error**-nya, sistemnya seperti `GROUP BY` pada SQL. Terakhir, tambahkan `-c` setelah `uniq` agar bisa dihitung/di-*count* berdasarkan jumlah kemunculannya pada file tersebut.
 
-## Cara Pengerjaan 1C
+### Cara Pengerjaan 1C
 
 ![Source Code 1C](/images/1c.png)
 
@@ -68,7 +68,7 @@ Setiap kali berhasil ditemukan karakter `ERROR`, maka dihitung jumlah kemunculan
 
 Setelah `while` selesai dilakukan, maka *print* setiap username (`uniq`) beserta jumlah kemunculan INFO & ERROR-nya.
 
-## Cara Pengerjaan 1D
+### Cara Pengerjaan 1D
 
 ![Source Code 1D](/images/1d.png)
 
@@ -109,7 +109,7 @@ Agar dapat diurutkan, pisahkan kalimat `printf` tadi dengan *delimiter* ",". Jad
 
 Setelah semua *syntax* dilakukan, keluarkan outputnya ke file `error_message.csv`.
 
-## Cara Pengerjaan 1E
+### Cara Pengerjaan 1E
 
 ![Source Code 1E](/images/1e.png)
 
@@ -125,14 +125,14 @@ Artinya, karakter yang ada di dalam `echo` tersebut di-*print* di awal file `use
 
 Cara mencari karakter yang dicari juga sama persis dengan **1C**, cukup tambahkan `>> user_statistic.csv` pada akhir *syntax* agar output dapat muncul di file `user_statistic.csv`.
 
-## Kendala Selama Pengerjaan
+### Kendala Selama Pengerjaan
 
 1. Awalnya, perlu mencari referensi yang banyak terlebih dahulu karena baru pertama kali menggunakan bahasa *Bash*.
 2. Pada awalnya, cukup bingung untuk mengambil karakter pada tiap line karena tidak boleh menggunakan `awk`. Namun, akhirnya dari berbagai referensi, bisa menggunakan *command* `grep`.
 3. Pada soal 1D, awalnya tidak tahu caranya untuk bisa *sorting* dalam bentuk kalimat karena belum ada pembatasnya. Akhirnya, baru tau adanya *delimiter* agar bisa memisahkan kalimat dengan pembatas yang diinginkan.
 
 
-## Cara Pengerjaan 2A
+### Cara Pengerjaan 2A
 
 ![2a_sisop](https://user-images.githubusercontent.com/57633103/113398288-8cce3a80-93c8-11eb-8cea-474a19d683c7.png)
 
@@ -142,7 +142,7 @@ Untuk mengetahui Row ID dan profit percentage terbesar maka menggunakan definisi
 ![2a_sisop_output](https://user-images.githubusercontent.com/57633103/113399663-c2742300-93ca-11eb-864f-c77fe015e420.png)
 
 
-## Cara Pengerjaan 2B
+### Cara Pengerjaan 2B
 
 ![2b_sisop](https://user-images.githubusercontent.com/57633103/113398735-40cfc580-93c9-11eb-8d08-8d0c4a903841.png)
 
@@ -151,7 +151,7 @@ Membutuhkan daftar nama customer pada transaksi tahun 2017 di Albuquerque. `if($
 ![2b_sisop_output](https://user-images.githubusercontent.com/57633103/113399719-df105b00-93ca-11eb-97f5-6ee6c895e821.png)
 
 
-## Cara Pengerjaan 2C
+### Cara Pengerjaan 2C
 
 ![2c_sisop](https://user-images.githubusercontent.com/57633103/113432227-32a09a00-9407-11eb-8f8d-fb5cdfd84b1b.png)
 
@@ -159,7 +159,7 @@ Membutuhkan segment customer dan jumlah transaksinya yang paling sedikit. Karena
 
 ![2c_sisop_output](https://user-images.githubusercontent.com/57633103/113432235-346a5d80-9407-11eb-9149-9fdbb467a21c.png)
 
-## Cara Pengerjaan 2D
+### Cara Pengerjaan 2D
 
 ![2d_sisop](https://user-images.githubusercontent.com/57633103/113432238-346a5d80-9407-11eb-8f03-0c48898e7c0b.png)
 
