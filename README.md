@@ -6,6 +6,7 @@
 3. Husnan                05111940007002
 
 ## Soal 1
+[SOAL 1A](https://github.com/GeraldElroy7/soal-shift-sisop-modul-1-B03-2021/blob/main/soal1/soal1.sh)
 
 Pada soal 1, *user* diminta untuk membantu Ryujin untuk membuat laporan harian untuk aplikasi perusahaannya, *ticky*. Ada 2 laporan yang perlu dibuat, yaitu laporan **daftar peringkat pesan error** terbanyak yang dibuat oleh *ticky* dan **laporan penggunaan user** pada *ticky*. Soal ini tidak boleh dikerjakan menggunakan `AWK`.
 
