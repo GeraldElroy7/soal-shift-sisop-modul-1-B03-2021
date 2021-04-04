@@ -6,7 +6,7 @@
 3. Husnan                05111940007002
 
 ## Soal 1
-[SOAL 1A](https://github.com/GeraldElroy7/soal-shift-sisop-modul-1-B03-2021/blob/main/soal1/soal1.sh)
+[*SOURCE CODE SOAL 1*](https://github.com/GeraldElroy7/soal-shift-sisop-modul-1-B03-2021/blob/main/soal1/soal1.sh)
 
 Pada soal 1, *user* diminta untuk membantu Ryujin untuk membuat laporan harian untuk aplikasi perusahaannya, *ticky*. Ada 2 laporan yang perlu dibuat, yaitu laporan **daftar peringkat pesan error** terbanyak yang dibuat oleh *ticky* dan **laporan penggunaan user** pada *ticky*. Soal ini tidak boleh dikerjakan menggunakan `AWK`.
 
@@ -152,6 +152,7 @@ Cara mencari karakter yang dicari juga sama persis dengan **1C**, cukup tambahka
 3. Pada soal 1D, awalnya tidak tahu caranya untuk bisa *sorting* dalam bentuk kalimat karena belum ada pembatasnya. Akhirnya, baru tau adanya *delimiter* agar bisa memisahkan kalimat dengan pembatas yang diinginkan.
 
 ## Soal 2
+[*SOURCE CODE SOAL 2*](https://github.com/GeraldElroy7/soal-shift-sisop-modul-1-B03-2021/blob/main/soal2/soal2_generate_laporan_ihir_shisop.sh)
 
 ### Cara Pengerjaan 2A
 
@@ -262,6 +263,7 @@ Dengan menuliskan *code* tersebut didalam `crontab -e`, maka *script soal3b* aka
 ![OutputCron3b](https://user-images.githubusercontent.com/65794806/113506382-263b4f00-9577-11eb-9c3e-7869f51cf5b5.png)
 
 ### Cara Pengerjaan 3C
+[*SOURCE CODE SOAL 3C*](https://github.com/GeraldElroy7/soal-shift-sisop-modul-1-B03-2021/blob/main/soal3/soal3c.sh)
 
 Pada soal 3C, *user* diminta untuk *mendownload* foto kucing dan kelinci sesuai dengan *link* masing-masing secara bergantian pada hari yang berbeda yang mana hasilnya akan disimpan pada folder Kucing atau Kelinci.
 
@@ -333,6 +335,7 @@ Pada argumen `Kucing_* Kelinci_*`, memiliki arti bahwa folder yang dipilih adala
 ![Output3d2](https://user-images.githubusercontent.com/65794806/113506459-9d70e300-9577-11eb-99bd-803a0b1cb39d.png)
 
 ### Cara Pengerjaan 3E
+[*SOURCE CODE CRON 3E*](https://github.com/GeraldElroy7/soal-shift-sisop-modul-1-B03-2021/blob/main/soal3/cron3e.tab)
 
 Pada soal 3E, *user* diminta untuk membuat *crontab* agar dapat menjalankan perinta *zip* dan *unzip* secara otomatis sesuai dengan waktu yang ditentukan.
 Pada baris pertama, 
