@@ -201,7 +201,7 @@ Pada soal 3, *user* diminta untuk membantu Kuuhaku dalam *mendownload* 23 foto k
 
 ### Cara Pengerjaan 3A
 
-![Source Code 3A](/images/1a.png)
+![CodeSoal3a](https://user-images.githubusercontent.com/65794806/113506097-4cf88600-9575-11eb-9499-f98bd922e61b.png)
 
 *User* diminta untuk *mendownload* 23 foto kucing dari link *https://loremflickr.com/320/240/kitten* dengan penamaan file *Koleksi_01, Koleksi_02, dst* serta **menyimpan** log fotonya ke file *Foto.log*. Kemudian jika terdapat foto yang sama, maka foto tersebut akan di **hapus** dengan tidak perlu *mendownload* ulang foto lain.
 
@@ -224,11 +224,11 @@ yang mana jika foto tersimpan kurang dari 10, maka penamaan filenya adalah *Kole
 Kemudian, untuk mencari foto yang sama, kami menggunakan `cmp [FILE_1] [FILE_2]` yang mana akan membandingkan *byte* kedua file. Output dari fungsi tersebut disimpan dengan menggunakan `$?`. Jika hasilnya adalah 0, maka kedua file tersebut sama. Untuk menghapus file yang sama, kami menggunakan `rm [FILE]`
 
 #### Output
-![Output 1A](/images/hasil1a.png)
+![Output3a](https://user-images.githubusercontent.com/65794806/113506104-5e419280-9575-11eb-8e30-432f0dfba715.png)
 
 ### Cara Pengerjaan 3B
 
-![Source Code 1B](/images/1b.png)
+![Code3b](https://user-images.githubusercontent.com/65794806/113506313-a90fda00-9576-11eb-9713-892cdebb8fa0.png)
 
 Kali ini, *user* diminta untuk **menjalankan** *script* pada soal sebelumnya yang mana hasilnya akan disimpan dalam folder. 
 
@@ -243,7 +243,11 @@ Variabel `now` akan menyimpan nilai `date` tanggal pada waktu itu sehingga folde
 
 Terakhir, untuk menyimpan hasil *script soal3a*, semua file *Koleksi_* dan *Foto.log* dipindahkan dengan menggunakan `mv Koleksi_* $now && mv Foto.log $now`.
 
-![Source Code Cron3B]()
+#### Output Bash 3b
+![Output3b](https://user-images.githubusercontent.com/65794806/113506326-ca70c600-9576-11eb-9d64-6d83f988c44c.png)
+
+### Crontab 3b
+![CodeCron3b](https://user-images.githubusercontent.com/65794806/113506350-f68c4700-9576-11eb-836d-f5669ce949f9.png)
 
 Untuk menjalankan *script soal3b* secara otomatis, kami menggunakan *crontab*.
 
@@ -255,12 +259,12 @@ Untuk menjalankan *script soal3b* secara otomatis, kami menggunakan *crontab*.
 Dengan menuliskan *code* tersebut didalam `crontab -e`, maka *script soal3b* akan dijalankan secara otomatis jika semua argumen tersebut terpenuhi.
 
 
-#### Output
-![Output 1B](/images/hasil1b.png)
+#### Output Crontab
+***Setting waktu pada tanggal 22 jam 19.59 ke jam 20.00***
+![OutputCron3b](https://user-images.githubusercontent.com/65794806/113506382-263b4f00-9577-11eb-9c3e-7869f51cf5b5.png)
+
 
 ### Cara Pengerjaan 3C
-
-![Source Code 1C](/images/1c.png)
 
 Pada soal 3C, *user* diminta untuk *mendownload* foto kucing dan kelinci sesuai dengan *link* masing-masing secara bergantian pada hari yang berbeda yang mana hasilnya akan disimpan pada folder Kucing atau Kelinci.
 
@@ -294,15 +298,21 @@ pada awal algoritma untuk membuat folder dengan nama tanggal sekarang, dan
 ```bash
 mv Koleksi_* $1_$now && mv Foto.log $1_$now
 ```
-pada akhir algoritma untuk memindahkan semua file dengan awalan nama * foto dan file lognya.
+pada akhir algoritma untuk memindahkan semua file foto dengan awalan nama *Koleksi_* dan file lognya.
 
 
 #### Output
-![Output 1C](/images/hasil1c.png)
+**Contoh 1**
+![Output3c1](https://user-images.githubusercontent.com/65794806/113506415-5da9fb80-9577-11eb-81d4-01d17330f014.png)
+
+**Contoh 2**
+![Output3c2](https://user-images.githubusercontent.com/65794806/113506435-7a463380-9577-11eb-8f7f-0921d319991b.png)
+
+![Output3c3](https://user-images.githubusercontent.com/65794806/113506445-83cf9b80-9577-11eb-92a8-c5da08335aeb.png)
 
 ### Cara Pengerjaan 3D
 
-![Source Code 1D](/images/1d.png)
+![Code3d](https://user-images.githubusercontent.com/65794806/113506450-8b8f4000-9577-11eb-916d-79d52a714a2e.png)
 
 Pada *problem* 3D, *user* diminta untuk melakukan *zip* folder-folder Kucing_ dan Kelinci_ menjadi Koleksi.zip yang mempunyai *password* tanggal pada saat di *zip*.
 
@@ -321,29 +331,42 @@ zip -r -m -q --password $unknow Koleksi.zip Kucing_* Kelinci_*
 Pada argumen `Kucing_* Kelinci_*`, memiliki arti bahwa folder yang dipilih adalah folder dengan nama depan *Kucing_* maupun *Kelinci_*.
 
 #### Output
-![Output 1D](/images/hasil1d.png)
+![Output3d1](https://user-images.githubusercontent.com/65794806/113506458-977b0200-9577-11eb-9087-8ce9af8164a3.png)
 
-### Cara Pengerjaan 1E
+![Output3d2](https://user-images.githubusercontent.com/65794806/113506459-9d70e300-9577-11eb-99bd-803a0b1cb39d.png)
 
-![Source Code 1E](/images/1e.png)
+### Cara Pengerjaan 3E
 
-Soal 1E dapat dikatakan sebagai lanjutan dari soal **1C**. Setelah semua informasi dari 1C didapat, maka buat outputnya ke dalam file `user_statistis.csv` dengan header **Username,INFO,ERROR** dan diurutkan berdasarkan *username* secara **ascending**.
-
-Pertama kali, buat *header* yang diminta dengan *syntax* berikut : 
-
+Pada soal 3E, *user* diminta untuk membuat *crontab* agar dapat menjalankan perinta *zip* dan *unzip* secara otomatis sesuai dengan waktu yang ditentukan.
+Pada baris pertama, 
 ```bash
-echo "Username,Info,Error" > user_statistic.csv
+0 7 * * 1-5 bash ~/soal-shift-sisop-modul-1-B03-2021/soal3/soal3d.sh
 ```
+- Pada argumen pertama `0`, memiliki arti pada menit ke 0
+- Pada argumen kedua `7`, memiliki arti pada jam 7 pagi
+- Pada argumen ketiga dan keempat `* *`, memiliki arti bahwa tidak ada pengaturan waktu tertentu pada tanggal dan bulan
+- Pada argumen kelima `1-5`, memiliki arti pada rentang hari senin sampai jumat setiap minggunya
 
-Artinya, karakter yang ada di dalam `echo` tersebut di-*print* di awal file `user_statistic.csv`.
+`script soal3d` akan dijalankan jika semua argumen tersebut terpenuhi. 
 
-Cara mencari karakter yang dicari juga sama persis dengan **1C**, cukup tambahkan `>> user_statistic.csv` pada akhir *syntax* agar output dapat muncul di file `user_statistic.csv`.
+Kemudian pada baris kedua,
+```bash
+1 18 * * 1-5 /usr/bin/unzip -P `date +"%d%m%Y"` ~/soal-shift-sisop-modul-1-B03-2021/soal3/Koleksi.zip -d ~/soal-shift-sisop-modul-1-B03-2021/soal3 && rm ~/soal-shift-sisop-modul-1-B03-2021/soal3/Koleksi.zip
+```
+- Pada argumen pertama `1`, memiliki arti pada menit ke 1
+- Pada argumen kedua `18`, memiliki arti pada jam 18 atau 6 sore
+- Pada argumen ketiga dan keempat `* *`, memiliki arti bahwa tidak ada pengaturan waktu tertentu pada tanggal dan bulan
+- Pada argumen kelima `1-5`, memiliki arti pada rentang hari senin sampai jumat setiap minggunya
+
+Perintah unzip akan dijalankan jika semua argumen tersebut terpenuhi. `/usr/bin/unzip` merupakan `command` yang serupa dengan `unzip`, `-P` digunakan untuk memasukkan kata sandi yaitu `date +"%d%m%Y"` atau *tanggal saat itu* pada file yang akan di *unzip*, `-d` digunakan untuk meletakkan tempat hasil *unzip*, dan `rm` untuk menghapus *zip* file yang telah di *unzip*
 
 #### Output
-![Output 1E](/images/hasil1e.png)
+***Setting waktu pada tanggal 2 April 2021(hari jumat) jam 6.59 ke 7.00***
+![OutputCron3e1](https://user-images.githubusercontent.com/65794806/113506467-ab266880-9577-11eb-896c-c8c119939d4a.png)
+
+***Setting waktu pada tanggal 2 April 2021(hari jumat) jam 18.00 ke 18.01***
+![OutputCron3e2](https://user-images.githubusercontent.com/65794806/113506518-e6c13280-9577-11eb-8355-fa20e3734062.png)
 
 ### Kendala Selama Pengerjaan
 
-1. Awalnya, perlu mencari referensi yang banyak terlebih dahulu karena baru pertama kali menggunakan bahasa *Bash*.
-2. Pada awalnya, cukup bingung untuk mengambil karakter pada tiap line karena tidak boleh menggunakan `awk`. Namun, akhirnya dari berbagai referensi, bisa menggunakan *command* `grep`.
-3. Pada soal 1D, awalnya tidak tahu caranya untuk bisa *sorting* dalam bentuk kalimat karena belum ada pembatasnya. Akhirnya, baru tau adanya *delimiter* agar bisa memisahkan kalimat dengan pembatas yang diinginkan.
+1. Code unzip dalam cron tidak mau tereksekusi, tetapi cron dapat mengeksekusi sebuah script yang isinya code unzip tersebut.
