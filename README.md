@@ -166,7 +166,7 @@ Untuk mengetahui Row ID dan profit percentage terbesar maka menggunakan definisi
 
 ### Cara Pengerjaan 2B
 
-![2b_sisop](https://user-images.githubusercontent.com/57633103/113398735-40cfc580-93c9-11eb-8d08-8d0c4a903841.png)
+![2b](https://user-images.githubusercontent.com/64303057/113510159-99e35900-9583-11eb-968e-2f7c9be8e9ab.png)
 
 Membutuhkan daftar nama customer pada transaksi tahun 2017 di Albuquerque. `if($2~"-2017-" && $10~"Albuquerque")` Setelah melalui percabangan maka akan diteruskan ke `a[$7]` yaitu terdapat nama-nama yang ada pada rentang tersebut, Setelah itu diiterasikan array tersebut `for (costumer in a)`, dan akan ditampilkan satu persatu isi dari array nya dan otputnya pada `hasil.txt`.
 
@@ -175,22 +175,22 @@ Membutuhkan daftar nama customer pada transaksi tahun 2017 di Albuquerque. `if($
 
 ### Cara Pengerjaan 2C
 
-![2c_sisop](https://user-images.githubusercontent.com/57633103/113432227-32a09a00-9407-11eb-8f8d-fb5cdfd84b1b.png)
+![2c](https://user-images.githubusercontent.com/64303057/113510176-b97a8180-9583-11eb-91fc-b48f5331dd90.png)
 
 Membutuhkan segment customer dan jumlah transaksinya yang paling sedikit. Karena mencari yang paling sedikit, `min` diinisialisasikan menjadi `9999` yaitu angka paling maksimal, Setelah itu dilakukan iterasi `for(seg in c)` dan terdapat percabangan didalamnya `if(min > c[seg])`, maka akan terus dicari yang paling sedikit terus akan ditampilkan di `bukan1.txt`.
 
 #### Output
-![2c_sisop_output](https://user-images.githubusercontent.com/57633103/113432235-346a5d80-9407-11eb-9149-9fdbb467a21c.png)
+![hasil2c](https://user-images.githubusercontent.com/64303057/113510183-c1d2bc80-9583-11eb-8443-e81d569a1173.png)
 
 ### Cara Pengerjaan 2D
 
-![2d_sisop](https://user-images.githubusercontent.com/57633103/113432238-346a5d80-9407-11eb-8f03-0c48898e7c0b.png)
+![2d](https://user-images.githubusercontent.com/64303057/113510243-1ece7280-9584-11eb-89a1-4516c510c627.png)
 
 mencari wilayah bagian (region) yang memiliki total keuntungan (profit) paling sedikit dan total keuntungan wilayah tersebut. Hampir sama dengan `2c` perbedaannya terdapat pada kolom, untuk `2c` menggunakan kolom `$8` sedangakan `2d` kolom `$13` Mengunakan `NF` yaitu kolom paling belakang diinisialisasikan sebagai profit
 Setelah itu jika `NR > 1` maka index nya bertambah sesuai profitnya. Beranjak ke `END` nya setelah diinisialisasi `min` ke angka paling besar, masuk ke iterasi `for(reg in c)`, jika `min > c[reg]` maka `min` nya akan berubah menjadi kecil agar ketemu angka paling kecilnya terus akan ditampilkan di `bukan1.txt`.
 
 #### Output
-![2d_sisop_output](https://user-images.githubusercontent.com/57633103/113432241-3502f400-9407-11eb-9e51-ee0f3755d94a.png)
+![hasil2d](https://user-images.githubusercontent.com/64303057/113510194-d3b45f80-9583-11eb-9e50-6efa0fec3d50.png)
 
 ### Cara Pengerjaan 2E
 
