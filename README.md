@@ -12,7 +12,7 @@ Pada soal 1, *user* diminta untuk membantu Ryujin untuk membuat laporan harian u
 
 ### Cara Pengerjaan 1A
 
-![Source Code 1A](/images/1a.png)
+![1a](https://user-images.githubusercontent.com/65794806/113507651-6b16b400-957e-11eb-9717-8cba20e3ac3d.png)
 
 *User* diminta untuk mengumpulkan informasi dari log aplikasi yang terdapat pada file `syslog.log`. Informasi yang diperlukan antara lain: `jenis log (ERROR/INFO)`, `pesan log`, dan `username` pada setiap baris lognya. Untuk mempermudah pekerjaannya, maka diperlukan **regex** dalam memeriksa satu per satu baris.
 
@@ -23,11 +23,11 @@ Karena `(ERROR/INFO)` dimulai dengan huruf kapital E dan I, maka cukup cari kali
 Kami juga menambahkan `.*` pada *syntax*, agar karakter setelah huruf yang difilter juga ikut di-*print* hingga karakter terakhir pada line tersebut. Setelah itu, akhiri dengan file yang dituju, yaitu `syslog.log`
 
 #### Output
-![Output 1A](/images/hasil1a.png)
+![hasil1a](https://user-images.githubusercontent.com/65794806/113507655-75d14900-957e-11eb-8991-8edfa7d9df7c.png)
 
 ### Cara Pengerjaan 1B
 
-![Source Code 1B](/images/1b.png)
+![1b](https://user-images.githubusercontent.com/65794806/113507657-7cf85700-957e-11eb-8f54-031338d49123.png)
 
 Pada soal ini, *user* diminta untuk menampilkan semua pesan **error** yang muncul beserta jumlah kemunculannya. Kami memakai `grep -o` lagi agar hanya mengambil karakter sesuai yang di-filter. Karena yang diminta hanya pesan yang **error**, maka yang di-*filter* cukup `"ERROR.*`. 
 
@@ -42,11 +42,11 @@ Arti dari *command* ini ialah mengambil semua karakter sebelum tanda "(", karena
 Setelah itu, lakukan `sort` agar bisa melakukan `uniq`. `uniq` akan mengelompokkan karakter sesuai jenis **Error**-nya, sistemnya seperti `GROUP BY` pada SQL. Terakhir, tambahkan `-c` setelah `uniq` agar bisa dihitung/di-*count* berdasarkan jumlah kemunculannya pada file tersebut.
 
 #### Output
-![Output 1B](/images/hasil1b.png)
+![hasil1b](https://user-images.githubusercontent.com/65794806/113507666-85e92880-957e-11eb-9ef7-c024f373f40c.png)
 
 ### Cara Pengerjaan 1C
 
-![Source Code 1C](/images/1c.png)
+![1c](https://user-images.githubusercontent.com/65794806/113507670-8b467300-957e-11eb-8d5a-b56e15ce6bb0.png)
 
 Pada 1C, *user* diminta untuk menampilkan jumlah kemunculan log ERROR dan INFO untuk setiap *user*-nya.
 
@@ -81,11 +81,11 @@ Setiap kali berhasil ditemukan karakter `ERROR`, maka dihitung jumlah kemunculan
 Setelah `while` selesai dilakukan, maka *print* setiap username (`uniq`) beserta jumlah kemunculan INFO & ERROR-nya.
 
 #### Output
-![Output 1C](/images/hasil1c.png)
+![hasil1c](https://user-images.githubusercontent.com/65794806/113507673-939eae00-957e-11eb-8ce5-637d0564651b.png)
 
 ### Cara Pengerjaan 1D
 
-![Source Code 1D](/images/1d.png)
+![1d](https://user-images.githubusercontent.com/65794806/113507681-9ac5bc00-957e-11eb-91cb-120327c4e541.png)
 
 Pada soal **1D**, *user* diminta untuk membuat daftar pesan error dan jumlah kemunculannya **diurutkan** berdasarkan jumlah kemunculan pesan error dari yang terbanyak.
 
@@ -125,11 +125,11 @@ Agar dapat diurutkan, pisahkan kalimat `printf` tadi dengan *delimiter* ",". Jad
 Setelah semua *syntax* dilakukan, keluarkan outputnya ke file `error_message.csv`.
 
 #### Output
-![Output 1D](/images/hasil1d.png)
+![hasil1d](https://user-images.githubusercontent.com/65794806/113507686-a1ecca00-957e-11eb-9efc-730f05efbfde.png)
 
 ### Cara Pengerjaan 1E
 
-![Source Code 1E](/images/1e.png)
+![1e](https://user-images.githubusercontent.com/65794806/113507692-a74a1480-957e-11eb-8cbc-a7716db65afa.png)
 
 Soal 1E dapat dikatakan sebagai lanjutan dari soal **1C**. Setelah semua informasi dari 1C didapat, maka buat outputnya ke dalam file `user_statistis.csv` dengan header **Username,INFO,ERROR** dan diurutkan berdasarkan *username* secara **ascending**.
 
@@ -144,7 +144,7 @@ Artinya, karakter yang ada di dalam `echo` tersebut di-*print* di awal file `use
 Cara mencari karakter yang dicari juga sama persis dengan **1C**, cukup tambahkan `>> user_statistic.csv` pada akhir *syntax* agar output dapat muncul di file `user_statistic.csv`.
 
 #### Output
-![Output 1E](/images/hasil1e.png)
+![hasil1e](https://user-images.githubusercontent.com/65794806/113507699-afa24f80-957e-11eb-90f5-6924f4522614.png)
 
 ### Kendala Selama Pengerjaan
 1. Awalnya, perlu mencari referensi yang banyak terlebih dahulu karena baru pertama kali menggunakan bahasa *Bash*.
