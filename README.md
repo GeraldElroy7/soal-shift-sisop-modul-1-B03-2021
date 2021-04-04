@@ -177,7 +177,7 @@ Membutuhkan daftar nama customer pada transaksi tahun 2017 di Albuquerque. `if($
 
 ![2c](https://user-images.githubusercontent.com/64303057/113510176-b97a8180-9583-11eb-91fc-b48f5331dd90.png)
 
-Membutuhkan segment customer dan jumlah transaksinya yang paling sedikit. Karena mencari yang paling sedikit, `min` diinisialisasikan menjadi `9999` yaitu angka paling maksimal, Setelah itu dilakukan iterasi `for(seg in c)` dan terdapat percabangan didalamnya `if(min > c[seg])`, maka akan terus dicari yang paling sedikit terus akan ditampilkan di `bukan1.txt`.
+Membutuhkan segment customer dan jumlah transaksinya yang paling sedikit. Karena mencari yang paling sedikit, `min` diinisialisasikan menjadi `9999` yaitu angka paling maksimal, Setelah itu dilakukan iterasi `for(seg in c)` dan terdapat percabangan didalamnya `if(min > c[seg])`, maka akan terus dicari yang paling sedikit terus akan ditampilkan di `hasil.txt`.
 
 #### Output
 ![hasil2c](https://user-images.githubusercontent.com/64303057/113510183-c1d2bc80-9583-11eb-8443-e81d569a1173.png)
@@ -186,8 +186,9 @@ Membutuhkan segment customer dan jumlah transaksinya yang paling sedikit. Karena
 
 ![2d](https://user-images.githubusercontent.com/64303057/113510243-1ece7280-9584-11eb-89a1-4516c510c627.png)
 
-mencari wilayah bagian (region) yang memiliki total keuntungan (profit) paling sedikit dan total keuntungan wilayah tersebut. Hampir sama dengan `2c` perbedaannya terdapat pada kolom, untuk `2c` menggunakan kolom `$8` sedangakan `2d` kolom `$13` Mengunakan `NF` yaitu kolom paling belakang diinisialisasikan sebagai profit
-Setelah itu jika `NR > 1` maka index nya bertambah sesuai profitnya. Beranjak ke `END` nya setelah diinisialisasi `min` ke angka paling besar, masuk ke iterasi `for(reg in c)`, jika `min > c[reg]` maka `min` nya akan berubah menjadi kecil agar ketemu angka paling kecilnya terus akan ditampilkan di `bukan1.txt`.
+*User* diminta untuk mencari wilayah bagian (region) yang memiliki total keuntungan (profit) paling sedikit dan total keuntungan wilayah tersebut. Hampir sama dengan `2c` tetapi perbedaannya terdapat pada kolom, untuk `2c` menggunakan kolom `$8` sedangakan `2d` kolom `$13`.
+
+Lalu, gunakanlah `NF` yaitu kolom paling belakang diinisialisasikan sebagai profit. Setelah itu jika `NR > 1` maka index nya bertambah sesuai profitnya. Beranjak ke `END` nya setelah diinisialisasi `min` ke angka paling besar, masuk ke iterasi `for(reg in c)`, jika `min > c[reg]` maka `min` nya akan berubah menjadi kecil agar ketemu angka paling kecilnya terus akan ditampilkan di `hasil.txt`.
 
 #### Output
 ![hasil2d](https://user-images.githubusercontent.com/64303057/113510194-d3b45f80-9583-11eb-9e50-6efa0fec3d50.png)
