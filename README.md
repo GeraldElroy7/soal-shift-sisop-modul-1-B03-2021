@@ -24,6 +24,11 @@ Kami juga menambahkan `.*` pada *syntax*, agar karakter setelah huruf yang difil
 #### Output
 ![Output 1A](/images/hasil1a.png)
 
+#### Kendala Pengerjaan 1A
+
+1. Awalnya, perlu mencari referensi yang banyak terlebih dahulu karena baru pertama kali menggunakan bahasa *Bash*.
+2. Pada awalnya, cukup bingung untuk mengambil karakter pada tiap line karena tidak boleh menggunakan `awk`. Namun, akhirnya dari berbagai referensi, bisa menggunakan *command* `grep`.
+
 ### Cara Pengerjaan 1B
 
 ![Source Code 1B](/images/1b.png)
@@ -42,6 +47,9 @@ Setelah itu, lakukan `sort` agar bisa melakukan `uniq`. `uniq` akan mengelompokk
 
 #### Output
 ![Output 1B](/images/hasil1b.png)
+
+#### Kendala Pengerjaan 1B
+Tidak ada kendala
 
 ### Cara Pengerjaan 1C
 
@@ -81,6 +89,9 @@ Setelah `while` selesai dilakukan, maka *print* setiap username (`uniq`) beserta
 
 #### Output
 ![Output 1C](/images/hasil1c.png)
+
+#### Kendala Pengerjaan 1C
+Tidak ada kendala
 
 ### Cara Pengerjaan 1D
 
@@ -126,6 +137,9 @@ Setelah semua *syntax* dilakukan, keluarkan outputnya ke file `error_message.csv
 #### Output
 ![Output 1D](/images/hasil1d.png)
 
+#### Kendala Pengerjaan 1D
+1. Pada soal 1D, awalnya tidak tahu caranya untuk bisa *sorting* dalam bentuk kalimat karena belum ada pembatasnya. Akhirnya, baru tau adanya *delimiter* agar bisa memisahkan kalimat dengan pembatas yang diinginkan.
+
 ### Cara Pengerjaan 1E
 
 ![Source Code 1E](/images/1e.png)
@@ -145,11 +159,8 @@ Cara mencari karakter yang dicari juga sama persis dengan **1C**, cukup tambahka
 #### Output
 ![Output 1E](/images/hasil1e.png)
 
-### Kendala Selama Pengerjaan
-
-1. Awalnya, perlu mencari referensi yang banyak terlebih dahulu karena baru pertama kali menggunakan bahasa *Bash*.
-2. Pada awalnya, cukup bingung untuk mengambil karakter pada tiap line karena tidak boleh menggunakan `awk`. Namun, akhirnya dari berbagai referensi, bisa menggunakan *command* `grep`.
-3. Pada soal 1D, awalnya tidak tahu caranya untuk bisa *sorting* dalam bentuk kalimat karena belum ada pembatasnya. Akhirnya, baru tau adanya *delimiter* agar bisa memisahkan kalimat dengan pembatas yang diinginkan.
+#### Kendala Pengerjaan 1E
+Tidak ada kendala
 
 ## Soal 2
 
@@ -163,6 +174,9 @@ Untuk mengetahui Row ID dan profit percentage terbesar maka menggunakan definisi
 #### Output
 ![2a_sisop_output](https://user-images.githubusercontent.com/57633103/113399663-c2742300-93ca-11eb-864f-c77fe015e420.png)
 
+#### Kendala Pengerjaan 2A
+Tidak ada kendala
+
 
 ### Cara Pengerjaan 2B
 
@@ -172,6 +186,9 @@ Membutuhkan daftar nama customer pada transaksi tahun 2017 di Albuquerque. `if($
 
 #### Output
 ![2b_sisop_output](https://user-images.githubusercontent.com/57633103/113399719-df105b00-93ca-11eb-97f5-6ee6c895e821.png)
+
+#### Kendala Pengerjaan 2B
+Tidak ada kendala
 
 
 ### Cara Pengerjaan 2C
@@ -183,6 +200,9 @@ Membutuhkan segment customer dan jumlah transaksinya yang paling sedikit. Karena
 #### Output
 ![2c_sisop_output](https://user-images.githubusercontent.com/57633103/113432235-346a5d80-9407-11eb-9149-9fdbb467a21c.png)
 
+#### Kendala Pengerjaan 2C
+Tidak ada kendala
+
 ### Cara Pengerjaan 2D
 
 ![2d_sisop](https://user-images.githubusercontent.com/57633103/113432238-346a5d80-9407-11eb-8f03-0c48898e7c0b.png)
@@ -193,7 +213,8 @@ Setelah itu jika `NR > 1` maka index nya bertambah sesuai profitnya. Beranjak ke
 #### Output
 ![2d_sisop_output](https://user-images.githubusercontent.com/57633103/113432241-3502f400-9407-11eb-9e51-ee0f3755d94a.png)
 
-### Kendala Selama Pengerjaan
+#### Kendala Pengerjaan 2D
+Tidak ada kendala
 
 ## Soal 3
 
@@ -226,6 +247,9 @@ Kemudian, untuk mencari foto yang sama, kami menggunakan `cmp [FILE_1] [FILE_2]`
 #### Output
 ![Output3a](https://user-images.githubusercontent.com/65794806/113506104-5e419280-9575-11eb-8e30-432f0dfba715.png)
 
+#### Kendala Pengerjaan 3A
+Tidak ada kendala
+
 ### Cara Pengerjaan 3B
 
 ![Code3b](https://user-images.githubusercontent.com/65794806/113506313-a90fda00-9576-11eb-9713-892cdebb8fa0.png)
@@ -246,6 +270,9 @@ Terakhir, untuk menyimpan hasil *script soal3a*, semua file *Koleksi_* dan *Foto
 #### Output Bash 3b
 ![Output3b](https://user-images.githubusercontent.com/65794806/113506326-ca70c600-9576-11eb-9d64-6d83f988c44c.png)
 
+#### Kendala Pengerjaan 3B
+Tidak ada kendala
+
 ### Crontab 3b
 ![CodeCron3b](https://user-images.githubusercontent.com/65794806/113506350-f68c4700-9576-11eb-836d-f5669ce949f9.png)
 
@@ -262,6 +289,9 @@ Dengan menuliskan *code* tersebut didalam `crontab -e`, maka *script soal3b* aka
 #### Output Crontab
 ***Setting waktu pada tanggal 22 jam 19.59 ke jam 20.00***
 ![OutputCron3b](https://user-images.githubusercontent.com/65794806/113506382-263b4f00-9577-11eb-9c3e-7869f51cf5b5.png)
+
+#### Kendala Pengerjaan Cron3B
+Tidak ada kendala
 
 
 ### Cara Pengerjaan 3C
@@ -310,6 +340,8 @@ pada akhir algoritma untuk memindahkan semua file foto dengan awalan nama *Kolek
 
 ![Output3c3](https://user-images.githubusercontent.com/65794806/113506445-83cf9b80-9577-11eb-92a8-c5da08335aeb.png)
 
+#### Kendala Pengerjaan 3C
+
 ### Cara Pengerjaan 3D
 
 ![Code3d](https://user-images.githubusercontent.com/65794806/113506450-8b8f4000-9577-11eb-916d-79d52a714a2e.png)
@@ -334,6 +366,8 @@ Pada argumen `Kucing_* Kelinci_*`, memiliki arti bahwa folder yang dipilih adala
 ![Output3d1](https://user-images.githubusercontent.com/65794806/113506458-977b0200-9577-11eb-9087-8ce9af8164a3.png)
 
 ![Output3d2](https://user-images.githubusercontent.com/65794806/113506459-9d70e300-9577-11eb-99bd-803a0b1cb39d.png)
+
+#### Kendala Pengerjaan 3D
 
 ### Cara Pengerjaan 3E
 
@@ -367,6 +401,6 @@ Perintah unzip akan dijalankan jika semua argumen tersebut terpenuhi. `/usr/bin/
 ***Setting waktu pada tanggal 2 April 2021(hari jumat) jam 18.00 ke 18.01***
 ![OutputCron3e2](https://user-images.githubusercontent.com/65794806/113506518-e6c13280-9577-11eb-8355-fa20e3734062.png)
 
-### Kendala Selama Pengerjaan
+#### Kendala Pengerjaan Cron3E
 
 1. Code unzip dalam cron tidak mau tereksekusi, tetapi cron dapat mengeksekusi sebuah script yang isinya code unzip tersebut.
