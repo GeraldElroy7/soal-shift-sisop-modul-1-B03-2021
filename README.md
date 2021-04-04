@@ -247,10 +247,10 @@ Terakhir, untuk menyimpan hasil *script soal3a*, semua file *Koleksi_* dan *Foto
 
 Untuk menjalankan *script soal3b* secara otomatis, kami menggunakan *crontab*.
 
-Pada argumen pertama `0`, memiliki arti pada menit ke 0
-Pada argumen kedua `20`, memiliki arti pada jam 20 atau 8 malam
-Pada argumen ketiga `1-31/7,2-31/4`, memiliki arti pada tiap tujuh hari dimulai pada tanggal 1 atau tiap 4 hari dimulai pada tanggal 2
-Pada argumen keempat dan kelima `* *`, memiliki arti bahwa tidak ada pengaturan waktu tertentu pada bulan dan nama hari
+- Pada argumen pertama `0`, memiliki arti pada menit ke 0
+- Pada argumen kedua `20`, memiliki arti pada jam 20 atau 8 malam
+- Pada argumen ketiga `1-31/7,2-31/4`, memiliki arti pada tiap tujuh hari dimulai pada tanggal 1 atau tiap 4 hari dimulai pada tanggal 2
+- Pada argumen keempat dan kelima `* *`, memiliki arti bahwa tidak ada pengaturan waktu tertentu pada bulan dan nama hari
 
 Dengan menuliskan *code* tersebut didalam `crontab -e`, maka *script soal3b* akan dijalankan secara otomatis jika semua argumen tersebut terpenuhi.
 
@@ -264,51 +264,61 @@ Dengan menuliskan *code* tersebut didalam `crontab -e`, maka *script soal3b* aka
 
 Pada soal 3C, *user* diminta untuk *mendownload* foto kucing dan kelinci sesuai dengan *link* masing-masing secara bergantian pada hari yang berbeda yang mana hasilnya akan disimpan pada folder Kucing atau Kelinci.
 
+Algoritma pengerjaan pada soal ini mirip dengan soal3a dengan tambahan beberapa variabel dan action.
+
+Untuk menentukan foto mana yang akan *didownload*, perlu dilihat terlebih dahulu apakah ada folder dengan nama tanggal sebelumnya(kemarin) pada *directory*.
+
+```bash
+yday=$(date -d yesterday +"%d-%m-%Y")
+ls Kucing_$yday
+
+find_res=$?
+if [ $find_res -ne 0 ]
+then
+	make_func Kucing https://loremflickr.com/320/240/kitten
+else
+	make_func Kelinci https://loremflickr.com/320/240/bunny
+fi
+```
+
+Jika ada folder dengan nama Kucing, maka pada hari ini akan mendownload foto kelinci. Begitu juga sebaliknya. Kemudian, jika tidak ada folder dengan nama tanggal sebelumnya, maka foto yang duluan akan didownload adalah foto kucing.
+
+Selanjutnya, algoritma akan sama dengan soal3a dengan penambahan *action* 
+
+```bash
+now=$(date +"%d-%m-%Y")
+	mkdir $1_$now
+```
+pada awal algoritma untuk membuat folder dengan nama tanggal sekarang, dan 
+
+```bash
+mv Koleksi_* $1_$now && mv Foto.log $1_$now
+```
+pada akhir algoritma untuk memindahkan semua file dengan awalan nama * foto dan file lognya.
 
 
 #### Output
 ![Output 1C](/images/hasil1c.png)
 
-### Cara Pengerjaan 1D
+### Cara Pengerjaan 3D
 
 ![Source Code 1D](/images/1d.png)
 
-Pada soal **1D**, *user* diminta untuk membuat daftar pesan error dan jumlah kemunculannya **diurutkan** berdasarkan jumlah kemunculan pesan error dari yang terbanyak.
+Pada *problem* 3D, *user* diminta untuk melakukan *zip* folder-folder Kucing_ dan Kelinci_ menjadi Koleksi.zip yang mempunyai *password* tanggal pada saat di *zip*.
 
-Pesan **error** dapat dikelompokkan berdasarkan jenisnya. Ini adalah contoh kata yang mewakilkan setiap pesan **error** yang ada, seperti:
-
- - modified
- - permission
- - tried
- - timeout
- - exist
- - connection
-
-Agar mudah untuk diiterasi, maka tiap *keyword* ini diinisiasikan sebagai sebuah variabel. Variabelnya ini nanti berisikan berapa kali jumlah kemunculan untuk tiap jenis pesan **error**. Contohnya sebagai berikut:
+Untuk melakukan *zip*, kami perlu mengakses letak folder yang akan di *zip* dengan *command* `cd [FOLDER_TUJUAN]`.
+Setelah itu, membuat variabel yang akan menyimpan nilai `date` pada tanggal saat itu sebagai *password* file *zip* yang akan dibuat
 
 ```bash
-modified=$(grep "modified" syslog.log | wc -l)
+unknow=$(date +"%d%m%Y")
+zip -r -m -q --password $unknow Koleksi.zip Kucing_* Kelinci_*
 ```
+- `zip -r` berfungsi untuk melakukan *zip* pada sebuah folder
+- `zip -m` berfungsi untuk menghapus file/folder yang telah di *zip*
+- `zip -q` berfungsi untuk tidak memunculkan info pada terminal ketika di *zip*
+- `zip --password` berfungsi untuk membuat sebuah kata sandi pada file *zip* yang dibuat
 
-Artinya, isi dari variabel `modified` adalah jumlah kemunculan kata *modified* pada `syslog.log` untuk tiap barisnya. Gunakan `grep` agar bisa mengambil karakter yang diinginkan, lalu tambahkan `wc -l` agar dihitung juga jumlah kemunculannya. Ini juga berlaku untuk pesan *error* lainnya.
-
-Tambahkan juga *header* sebagai awalan dari file `error_message.csv` dengan syntax:
-
-```bash
-echo "Error,Count" > error_message.csv
-```
-
-Setelah semua variabel sudah mempunyai nilai, langkah terakhir adalah *print* semua jenis **error** beserta jumlah kemunculannya. Variabel tadi dipanggil dengan prefix `$`, contohnya adalah `$modified`.
-
-Soal meminta untuk mengurutkan dari jumlah kemunculan pesan error yang terbanyak. Maka, lakukan syntax ini: 
-
-```bash
-sort -t"," -k2 -nr  >> error_message.csv
-```
-
-Agar dapat diurutkan, pisahkan kalimat `printf` tadi dengan *delimiter* ",". Jadi, karakter sebelum koma (pesan **error**) akan dianggap kolom pertama, dan setelah koma (jumlah kemunculan) akan dianggap sebagai kolom kedua. Lakukan *sorting* pada kolom kedua secara *descending* dengan *command* `-nr`, yang berarti *number reverse*.
-
-Setelah semua *syntax* dilakukan, keluarkan outputnya ke file `error_message.csv`.
+Pada argumen `Kucing_* Kelinci_*`, memiliki arti bahwa folder yang dipilih adalah folder dengan nama depan *Kucing_* maupun *Kelinci_*.
 
 #### Output
 ![Output 1D](/images/hasil1d.png)
