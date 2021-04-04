@@ -6,7 +6,6 @@
 3. Husnan                05111940007002
 
 ## Soal 1
-[*SOURCE CODE SOAL 1*](https://github.com/GeraldElroy7/soal-shift-sisop-modul-1-B03-2021/blob/main/soal1/soal1.sh)
 
 Pada soal 1, *user* diminta untuk membantu Ryujin untuk membuat laporan harian untuk aplikasi perusahaannya, *ticky*. Ada 2 laporan yang perlu dibuat, yaitu laporan **daftar peringkat pesan error** terbanyak yang dibuat oleh *ticky* dan **laporan penggunaan user** pada *ticky*. Soal ini tidak boleh dikerjakan menggunakan `AWK`.
 
@@ -152,14 +151,13 @@ Cara mencari karakter yang dicari juga sama persis dengan **1C**, cukup tambahka
 3. Pada soal 1D, awalnya tidak tahu caranya untuk bisa *sorting* dalam bentuk kalimat karena belum ada pembatasnya. Akhirnya, baru tau adanya *delimiter* agar bisa memisahkan kalimat dengan pembatas yang diinginkan.
 
 ## Soal 2
-[*SOURCE CODE SOAL 2*](https://github.com/GeraldElroy7/soal-shift-sisop-modul-1-B03-2021/blob/main/soal2/soal2_generate_laporan_ihir_shisop.sh)
 
 ### Cara Pengerjaan 2A
 
 ![2a_sisop](https://user-images.githubusercontent.com/57633103/113398288-8cce3a80-93c8-11eb-8cea-474a19d683c7.png)
 
 Untuk mengetahui Row ID dan profit percentage terbesar maka menggunakan definisi dari Profit Percentage yaitu : `profit=(($NF/($(NF-3)-$NF))*100)`. 
-`NF` yaitu kolom paling belakang, berdasarkan definisi tersebut kolomnya dihitung paling terakhir setelah itu mundur tiga setelah itu dikali seratus maka akan diketahui  profit percentage nya, Setelah itu masuk ke percabangan, jika  `profit>=max` maka yang paling besar akan ditampilkan ID nya beserta  profit percentage nya dan otputnya pada `hasil.txt`.
+`NF` yaitu kolom paling belakang, berdasarkan definisi tersebut kolomnya dihitung paling terakhir setelah itu mundur tiga setelah itu dikali seratus maka akan diketahui  profit percentage nya, Setelah itu masuk ke percabangan, jika  `profit>=max` maka yang paling besar akan ditampilkan ID nya beserta  profit percentage nya dan outputnya pada `hasil.txt`.
 
 #### Output
 ![2a_sisop_output](https://user-images.githubusercontent.com/57633103/113399663-c2742300-93ca-11eb-864f-c77fe015e420.png)
@@ -168,7 +166,7 @@ Untuk mengetahui Row ID dan profit percentage terbesar maka menggunakan definisi
 
 ![2b](https://user-images.githubusercontent.com/64303057/113510159-99e35900-9583-11eb-968e-2f7c9be8e9ab.png)
 
-Membutuhkan daftar nama customer pada transaksi tahun 2017 di Albuquerque. `if($2~"-2017-" && $10~"Albuquerque")` Setelah melalui percabangan maka akan diteruskan ke `a[$7]` yaitu terdapat nama-nama yang ada pada rentang tersebut, Setelah itu diiterasikan array tersebut `for (costumer in a)`, dan akan ditampilkan satu persatu isi dari array nya dan otputnya pada `hasil.txt`.
+Membutuhkan daftar nama customer pada transaksi tahun 2017 di Albuquerque. `if($2~"-2017-" && $10~"Albuquerque")` Setelah melalui percabangan maka akan diteruskan ke `a[$7]` yaitu terdapat nama-nama yang ada pada rentang tersebut, Setelah itu diiterasikan array tersebut `for (costumer in a)`, dan akan ditampilkan satu persatu isi dari array nya dan outputnya pada `hasil.txt`.
 
 #### Output
 ![2b_sisop_output](https://user-images.githubusercontent.com/57633103/113399719-df105b00-93ca-11eb-97f5-6ee6c895e821.png)
@@ -199,8 +197,7 @@ Output dari semua *code* soal 2 disimpan dalam file ***Hasil.txt***. Oleh karena
 ```bash
 Laporan-TokoShiSop.tsv >> hasil.txt
 ```
-#### Output
-[*hasil.txt*](https://github.com/GeraldElroy7/soal-shift-sisop-modul-1-B03-2021/blob/main/soal2/hasil.txt)
+
 
 ### Kendala Selama Pengerjaan
 1. Sebelumnya pada soal 2C dan 2D batas yang digunakan kurang tepat sehingga tidak dapat menampilkan hasil
@@ -215,7 +212,7 @@ Pada soal 3, *user* diminta untuk membantu Kuuhaku dalam *mendownload* 23 foto k
 
 *User* diminta untuk *mendownload* 23 foto kucing dari link *https://loremflickr.com/320/240/kitten* dengan penamaan file *Koleksi_01, Koleksi_02, dst* serta **menyimpan** log fotonya ke file *Foto.log*. Kemudian jika terdapat foto yang sama, maka foto tersebut akan di **hapus** dengan tidak perlu *mendownload* ulang foto lain.
 
-Untuk melakukan aksi sebanyak 23 kali, maka digunakan looping 
+Untuk melakukan aksi sebanyak 23 kali, maka digunakan *looping* 
 ```bash
 for((counter=1; counter<=23; counter++))
 do
@@ -223,10 +220,14 @@ do
 done
 ```
 
-Untuk mendownload foto tersebut, kami menggunakan `wget -O [PENAMAAN_FILE] -a [FILE_LOG] [LINK]` agar dapat **menyimpan** foto dengan penamaan lain serta membuat file lognya. Pada penamaan file, dilakukan kondisi `if else` yaitu
+Untuk *mendownload* foto tersebut, kami menggunakan `wget -O [PENAMAAN_FILE] -a [FILE_LOG] [LINK]` agar dapat **menyimpan** foto dengan penamaan lain serta membuat file lognya. Pada penamaan file, dilakukan kondisi `if else` yaitu
 
 ```bash
 if [ $name_num -le 9 ]
+	[ARGUMENT]
+else
+	[ARGUMENT]
+fi
 ```
 
 yang mana jika foto tersimpan kurang dari 10, maka penamaan filenya adalah *Koleksi_0X* dan jika sudah 10 atau lebih, maka penamaan filenya adalah *Koleksi_X*. 
@@ -251,7 +252,10 @@ mkdir $now
 ```
 Variabel `now` akan menyimpan nilai `date` tanggal pada waktu itu sehingga folder yang dibuat memiliki nama tanggal saat itu.
 
-Terakhir, untuk menyimpan hasil *script soal3a*, semua file *Koleksi_* dan *Foto.log* dipindahkan dengan menggunakan `mv Koleksi_* $now && mv Foto.log $now`.
+Terakhir, untuk menyimpan hasil *script soal3a*, semua file *Koleksi_* dan *Foto.log* dipindahkan dengan menggunakan
+```bash
+mv Koleksi_* $now && mv Foto.log $now
+```
 
 #### Output Bash 3b
 ![Output3b](https://user-images.githubusercontent.com/65794806/113506326-ca70c600-9576-11eb-9d64-6d83f988c44c.png)
@@ -278,7 +282,7 @@ Dengan menuliskan *code* tersebut didalam `crontab -e`, maka *script soal3b* aka
 
 Pada soal 3C, *user* diminta untuk *mendownload* foto kucing dan kelinci sesuai dengan *link* masing-masing secara bergantian pada hari yang berbeda yang mana hasilnya akan disimpan pada folder Kucing atau Kelinci.
 
-Algoritma pengerjaan pada soal ini mirip dengan soal3a dengan tambahan beberapa variabel dan action.
+Algoritma pengerjaan pada soal ini mirip dengan soal3a dengan tambahan beberapa variabel dan *action*.
 
 Untuk menentukan foto mana yang akan *didownload*, perlu dilihat terlebih dahulu apakah ada folder dengan nama tanggal sebelumnya(kemarin) pada *directory*.
 
