@@ -192,7 +192,16 @@ Setelah itu jika `NR > 1` maka index nya bertambah sesuai profitnya. Beranjak ke
 #### Output
 ![2d_sisop_output](https://user-images.githubusercontent.com/57633103/113432241-3502f400-9407-11eb-9e51-ee0f3755d94a.png)
 
+### Cara Pengerjaan 2E
+[*hasil.txt*](https://github.com/GeraldElroy7/soal-shift-sisop-modul-1-B03-2021/blob/main/soal2/hasil.txt)
+
+Output dari semua *code* soal 2 disimpan dalam file ***Hasil.txt***. Oleh karena itu pada akhir tiap *code* disertakan
+```bash
+Laporan-TokoShiSop.tsv >> hasil.txt
+```
+
 ### Kendala Selama Pengerjaan
+1. Sebelumnya pada soal 2C dan 2D batas yang digunakan kurang tepat sehingga tidak dapat menampilkan hasil
 
 ## Soal 3
 
